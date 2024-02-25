@@ -7,9 +7,15 @@ function App() {
   // const [contacts, setContacts] = useState(dummyContacts);
   const [selectedContactId, setSelectedContactId] = useState(null);
 
+
+  if (selectedContactId) {
+    return <div>
+      selected Contact
+    </div>
+  }else{
   return (
     <>
-      {selectedContactId ? <div>Selected Contact View</div> : <ContactList />}
+       <ContactList setSelectedContactId={setSelectedContactId}/>
     </>
   );
 }
